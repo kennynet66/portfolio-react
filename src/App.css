@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: var(--background--color);
+    color: var(--secondary--color);
+    transition-duration: 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background--color: #ffffff;
+    --primary--color: #F50057;
+    --secondary--color: #000;
+}
+
+/* :root {
+    --background--color: #000;
+    --primary--color: #F50057;
+    --secondary--color: #ffffff;
+} */
+
+.darktheme {
+    --background--color: #000;
+    --primary--color: #F50057;
+    --secondary--color: #ffffff;
+}
+
+#logo {
+    width: 100px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+    /* transition-duration: 0.5s; */
+    font-weight: bold;
+}
+
+nav ul li:hover {
+    color: var(--primary--color);
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+.content {
+    flex-wrap: wrap;
+    display: flex;
+    height: 90vh;
+}
+
+.about-me {
+    flex: 1;
+    text-align: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me p {
+    font-size: 25px;
+}
+
+.about-me h1 {
+    font-size: 50px;
+}
+
+.illustrations {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.download-btn,
+.work-btn,
+.link {
+    background-color: var(--primary--color);
+    color: var(--background--color);
+    margin: 2%;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 20%;
+    border: none;
+    font-weight: bold;
+}
+
+.link {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--background--color);
+}
+
+.parent-div {
+    position: absolute;
+    /* top: 30%; */
+    top: 25%;
+    background-color: var(--primary--color);
+    width: 300px;
+    border-radius: 0% 50% 50% 50%;
+    height: 300px;
+    transform: rotate(45deg);
+    /* animation-name: water-drop; */
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+.child-div {
+    position: relative;
+    /* animation-name: image-drop; */
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    top: 20%;
+}
+
+.child-div img {
+    bottom: 0;
+    width: 300px;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 100%;
+}
+
+.navigate {
+    display: flex;
+    padding: 10px;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+#mywork {
+    margin-top: 3%;
+    text-align: center;
+    height: 100vh;
+}
+
+.cards {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    max-width: 200px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.to-top {
+    position: fixed;
+    bottom: 20px;
+    display: none;
+    right: 20px;
+    background-color: var(--primary--color);
+    color: var(--background--color);
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    border-top: 1px solid #000;
+}
