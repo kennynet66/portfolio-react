@@ -25,8 +25,9 @@ function App() {
       setIcon(moonIcon);
     }
 
-    const d = new Date;
-    const yearSpan = document.querySelector(".year").textContent = d.getFullYear();
+    const d = new Date();
+    const yearSpan = (document.querySelector(".year").textContent =
+      d.getFullYear());
   };
 
   // Make the back to top button to only appear then the page is scrolled
@@ -55,8 +56,6 @@ function App() {
     myWorkSection.scrollIntoView({ behavior: "smooth" });
   };
 
-
-
   const toggleTheme = () => {
     if (document.body.classList == "darktheme") {
       localStorage.setItem("mode", "light");
@@ -69,6 +68,14 @@ function App() {
     }
   };
 
+  const openMenu = () => {
+    const menuBtn = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuBtn.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  }
+
   return (
     <>
       <nav>
@@ -77,10 +84,15 @@ function App() {
           <li>Home</li>
           <li>Contact me</li>
           <li>About me</li>
-          <li onClick={scrollToMyWork} >My work</li>
+          <li onClick={scrollToMyWork}>My work</li>
           <li>Blog</li>
         </ul>
-        {/* <img onClick={ moonIcon} id="icon" alt="" /> */}
+        <div className="menu-button" onClick={openMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
         <img src={icon} onClick={toggleTheme} id="icon" alt="" />
       </nav>
       <div className="content">
@@ -138,7 +150,12 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="contact"></section>
+      <section id="about-me">
+        <h1>About me</h1>
+      </section>
+      <section id="contact">
+        <h1>Contact me</h1>
+      </section>
       <a className="to-top" id="to-top" onClick={scrollToTop}>
         Back to top
       </a>

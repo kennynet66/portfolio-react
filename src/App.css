@@ -44,6 +44,9 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    background-color: var(--background--color);
 }
 
 nav ul {
@@ -71,7 +74,7 @@ nav ul li:hover {
 .content {
     flex-wrap: wrap;
     display: flex;
-    height: 90vh;
+    /* height: 100vh; */
 }
 
 .about-me {
@@ -162,12 +165,12 @@ a {
 #mywork {
     margin-top: 3%;
     text-align: center;
-    height: 100vh;
 }
 
 .cards {
     justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
 }
@@ -204,4 +207,70 @@ footer {
     text-align: center;
     color: #000;
     border-top: 1px solid #000;
+}
+
+#about-me {
+    text-align: center;
+}
+
+#contact {
+    text-align: center;
+}
+
+
+/* Navbar responsiveness */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    width: 30px;
+    height: 1px;
+    background-color: var(--secondary--color);
+    /* -webkit-transition: all 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 200px) and (max-width: 720px){
+    .illustrations{
+        display: none;
+    }
+    .download-btn{
+        width: 50%;
+    }
+    .menu-button {
+        display: flex;
+    }
+
+    .menu-button.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .menu-button.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-button.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+        gap: 20px;
+        backdrop-filter: blur(20px);
+        padding: 10px;
+    }
 }
